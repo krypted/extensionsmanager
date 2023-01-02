@@ -6,7 +6,7 @@ This project is to provide telemetry into extensions on macOS. There are a few t
 
 ## Usage
 
-extensionsman -all to show all extensions
+`extensionsman -all` to show all extensions
 
 or
 
