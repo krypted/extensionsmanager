@@ -10,27 +10,27 @@ This project is to provide telemetry into extensions on macOS. There are a few t
 
 or
 
-extensionsman -thirdparty to show thirdparty extensions
+`extensionsman -thirdparty` to show thirdparty extensions
 
 or
 
-extensionsman -n to show network extensions
+`extensionsman -n` to show network extensions
 
 or
 
-extensionsman -s to show system extensions except network extensions
+`extensionsman -s` to show system extensions except network extensions
 
 or
 
-extensionsman -raw to show unformatted result
+`extensionsman -raw` to show unformatted result
 
 or
 
-extensionsman -u to show system extensions that haven't been loaded
+`extensionsman -u` to show system extensions that haven't been loaded
 
 or
 
-extensionsman -h to show usage information
+`extensionsman -h` to show usage information
 
 ## How It Works
 
