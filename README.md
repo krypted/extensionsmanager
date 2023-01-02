@@ -26,6 +26,10 @@ extensionsman -raw to show unformatted result
 
 or
 
+extensionsman -u to show system extensions that haven't been loaded
+
+or
+
 extensionsman -h to show usage information
 
 ## How It Works
