@@ -4,7 +4,7 @@
 
 This project is to provide single pane of glass telemetry into extensions on macOS. There are a few types of extensions. As such, extensionsmman can be used to see the system extensions, network extensions (which are a class of system extensions), and the app extensions that are on a system. `pluginkit` and `systemextensionsctl` can be used to obtain some of this information if the app has been opened and the extension loaded or known about based on the underlying daemon that manages that type of extension. The goal of this project is to see the extensions that have not been loaded and provide a single interface to see information about the various types of extensions on a system. `extensionsman` is the first of the tools (a CLI version) to aggregate information from the built-in tools from Apple about extensions.
 
-This builds on the previous scripts at https://github.com/krypted/extensionslist and those can still be used. 
+This project is loosely based on the research documented at https://krypted.com/mac-os-x/get-telemetry-on-app-and-system-extensions-in-macos/. This builds on the previous scripts at https://github.com/krypted/extensionslist and those can still be used. The new project is compiled in swift so access to the necessary entitlements can be granted via MDM at deployment time and run on client systems (like what was covered in https://krypted.com/mac-security/macos-script-to-list-system-extensions-and-their-state/ but in swift).
 
 ## Contents of the Project
 
