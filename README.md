@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This project is to provide telemetry into extensions on macOS. There are a few types of extensions and extensionsmman can be used to see the system extensions, network extensions (which are a class of network extensions), and the app extensions that are on a system. pluginkit and systemextensionsctl can be used to obtain some of this information if the app has been opened and the extension loaded. The goal of this project is to see the extensions that have not been loaded and provide a single interface to see information about the various types of extensions on a system.
+This project is to provide single pane of glass telemetry into extensions on macOS. There are a few types of extensions. As such, extensionsmman can be used to see the system extensions, network extensions (which are a class of system extensions), and the app extensions that are on a system. `pluginkit` and `systemextensionsctl` can be used to obtain some of this information if the app has been opened and the extension loaded or known about based on the underlying daemon that manages that type of extension. The goal of this project is to see the extensions that have not been loaded and provide a single interface to see information about the various types of extensions on a system.
 
 ## Contents of the Project
 
@@ -46,4 +46,4 @@ Extensions have privacy implications. Apple provided the tools mentioned to give
 
 ## What's next?
 
-A GUI of course... Maybe for free on the app store for simpler access, but still with a compiled binary and source here for customizability.
+A GUI of course... Maybe for free on the app store for simpler access, but still with a compiled binary and source here for customizability. The project currently only provides information about existing extensions and doesn't have any options to manage extensions. It would be trivial to unload extensions or provide an option to delete an application bundle that is used to load an extension but is currently beyond the scope of what we're trying to accomplish. 
