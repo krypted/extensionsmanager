@@ -6,7 +6,9 @@ This project is to provide telemetry into extensions on macOS. There are a few t
 
 ## Contents of the Project
 
-This is two projects. The first is a command line interface that provides information about app extensions, system extensions, and network extensions. The second is a shell for a graphical interface. The source of each is posted, so they can be altered and compiled based on further needs.
+This is two projects. The first is a command line interface (`extensionsman` compiled binary, extensionsman-CLI Xcode Project, and extensionsman-CLI zipped up Xcode Project) that provides information about app extensions, system extensions, and network extensions. The second is a shell for a graphical interface (not yet uploaded at the moment). 
+
+The source of each is posted, so they can be altered and compiled based on further needs.
 
 ## Command Line Usage
 
