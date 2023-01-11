@@ -48,7 +48,7 @@ Extensions have privacy implications. Apple provided the tools mentioned to give
 
 ## What's next?
 
-A GUI of course... Maybe for free on the app store for simpler access, but still with a compiled binary and source here for customizability. Maybe it will look something like this:
+A GUI of course... Maybe for free on the app store for simpler access, but still with a compiled binary and source here for customizability. Given that much wisdom can be found in analyzing the past, maybe it will look something like this:
 
 ![EM3](https://github.com/krypted/extensionsmanager/blob/main/Images/em3.png)
 
