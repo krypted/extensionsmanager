@@ -50,6 +50,6 @@ Extensions have privacy implications. Apple provided the tools mentioned to give
 
 A GUI of course... Maybe for free on the app store for simpler access, but still with a compiled binary and source here for customizability. Given that much wisdom can be found in analyzing the past, maybe it will look something like this:
 
-![EM3](https://github.com/krypted/extensionsmanager/blob/main/Images/em3.png=250x250)
+![EM3](https://github.com/krypted/extensionsmanager/blob/main/Images/em3.png)
 
 The project currently only provides information about existing extensions and doesn't have any options to manage extensions. It would be trivial to unload extensions or provide an option to delete an application bundle that is used to load an extension but is currently beyond the scope of what we're trying to accomplish. We also didn't add the ability to see what apps use the extension symbols in compiled form, but instead that's at https://krypted.com/mac-os-x/new-tool-to-recursively-search-all-macos-binaries-for-symbols/ (these can take all night to run).
