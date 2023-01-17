@@ -52,6 +52,16 @@ Built-in tools like `pluginkit` and `systemextensionsctl` can be used to see inf
 
 Extensions have privacy implications. Apple provided the tools mentioned to give system administrators access to information on devices; however, this information is not readily available via API endpoints that can be called via swift. To quote the great Quinn "The Eskimo!" at Apple, "There is no API to get the list of system extensions installed. However, you can tell whether your system extension is installed by calling the -request:foundProperties: method." The goal is not to see if an extension is loaded from within an app but instead to see a digest of extensions. Therefore, while this is a swift project, some of the work being done is accessing shell commands (yes, shelling out to get information is dirty but sometimes it's a thing). 
 
+## Troubleshoot Build Issues
+
+The App Sandbox won't allow running command line tools/accessing APIs used in the project. This is why this app hasn't been submitted to the Mac App Store. The following error could appear if App Sandbox is enabled:
+
+<img src="https://github.com/krypted/extensionsmanager/blob/main/Images/xc1.png" width="550" height="400" />
+
+To fix, change the "Enable App Sandbox" option to No.
+
+<img src="https://github.com/krypted/extensionsmanager/blob/main/Images/xc3.png" width="550" height="400" />
+
 ## What's next?
 
 It would be great to allow for disabling and re-enabling extensions... Given that much wisdom can be found in analyzing the past, maybe it will look something like this (or later versions):
