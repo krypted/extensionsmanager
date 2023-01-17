@@ -1,6 +1,6 @@
 # Extensions Manager and extensionsman
 
-To just download the graphical interface, click here https://github.com/krypted/extensionsmanager/blob/main/Extension%20Manager%20Executable.zip. 
+To just download the graphical interface, click here https://github.com/krypted/extensionsmanager/raw/main/Extension%20Manager%20Executable.zip. 
 
 ## Purpose
 
