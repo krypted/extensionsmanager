@@ -57,3 +57,5 @@ It would be great to allow for disabling and re-enabling extensions... Given tha
 <img src="https://github.com/krypted/extensionsmanager/blob/main/Images/em3.png" width="400" height="400" />
 
 It would be trivial to unload extensions or provide an option to delete an application bundle (or archive to a location an extension can't run at) that is used to load an extension but is currently beyond the scope of what we're trying to accomplish. We also didn't add the ability to see what apps use the extension symbols in compiled form, but instead that's at https://krypted.com/mac-os-x/new-tool-to-recursively-search-all-macos-binaries-for-symbols/ (these can take all night to run).
+
+Because we're shelling information out it also uses a Refresh button to re-run all the scripts. It would be great to some day be able to get an entitlement that allows objects to natively work with async functions in macOS in such a way that they can be dynamically displayed (or this whole project could get sherlocked, which would be great tbh).
