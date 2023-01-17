@@ -4,7 +4,7 @@
 
 This project is to provide single pane of glass telemetry into extensions on macOS. There are a few types of extensions. As such, Extensions Manager (the GUI) and extensionsmman the CLI can be used to see the system extensions, network extensions (which are a class of system extensions), and the app extensions that are on a system. `pluginkit` and `systemextensionsctl` can be used to obtain some of this information if the app has been opened and the extension loaded or known about based on the underlying daemon that manages that type of extension. The goal of this project is to see the extensions that have not been loaded and provide a single interface to see information about the various types of extensions on a system. `extensionsman` is the first of the tools (a CLI version) to aggregate information from the built-in tools from Apple about extensions. Exteensions Manager is a graphical interface that provides much of the same information but in a GUI.
 
-<img src="https://github.com/krypted/extensionsmanager/blob/main/Images/em4.png" width="400" height="400" />
+<img src="https://github.com/krypted/extensionsmanager/blob/main/Images/em4.png" width="500" height="400" />
 
 ## Background
 
