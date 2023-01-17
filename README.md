@@ -2,13 +2,17 @@
 
 ## Purpose
 
-This project is to provide single pane of glass telemetry into extensions on macOS. There are a few types of extensions. As such, extensionsmman can be used to see the system extensions, network extensions (which are a class of system extensions), and the app extensions that are on a system. `pluginkit` and `systemextensionsctl` can be used to obtain some of this information if the app has been opened and the extension loaded or known about based on the underlying daemon that manages that type of extension. The goal of this project is to see the extensions that have not been loaded and provide a single interface to see information about the various types of extensions on a system. `extensionsman` is the first of the tools (a CLI version) to aggregate information from the built-in tools from Apple about extensions.
+This project is to provide single pane of glass telemetry into extensions on macOS. There are a few types of extensions. As such, Extensions Manager (the GUI) and extensionsmman the CLI can be used to see the system extensions, network extensions (which are a class of system extensions), and the app extensions that are on a system. `pluginkit` and `systemextensionsctl` can be used to obtain some of this information if the app has been opened and the extension loaded or known about based on the underlying daemon that manages that type of extension. The goal of this project is to see the extensions that have not been loaded and provide a single interface to see information about the various types of extensions on a system. `extensionsman` is the first of the tools (a CLI version) to aggregate information from the built-in tools from Apple about extensions. Exteensions Manager is a graphical interface that provides much of the same information but in a GUI.
+
+<img src="https://github.com/krypted/extensionsmanager/blob/main/Images/em4.png" width="400" height="400" />
+
+## Background
 
 This project is loosely based on the research documented at https://krypted.com/mac-os-x/get-telemetry-on-app-and-system-extensions-in-macos/. This builds on the previous scripts at [https://github.com/krypted/extensionslist](https://github.com/krypted/extensionslist/blob/main/extensionslist.sh) and those can still be used. The new project is compiled in swift so access to the necessary entitlements can be granted via MDM at deployment time and run on client systems (like what was covered in https://krypted.com/mac-security/macos-script-to-list-system-extensions-and-their-state/ but in swift).
 
 ## Contents of the Project
 
-This is two projects. The first is a command line interface (`extensionsman` compiled binary, extensionsman-CLI Xcode Project, and extensionsman-CLI zipped up Xcode Project) that provides information about app extensions, system extensions, and network extensions. The second is a shell for a graphical interface (not yet uploaded at the moment). 
+This is two projects. The first is a command line interface (`extensionsman` compiled binary, extensionsman-CLI Xcode Project, and extensionsman-CLI zipped up Xcode Project) that provides information about app extensions, system extensions, and network extensions. The second is a shell for a graphical interface. This can be edited and given the open nature of the license, embedded into other products.  
 
 The source of each is posted, so they can be altered and compiled based on further needs.
 
@@ -48,8 +52,8 @@ Extensions have privacy implications. Apple provided the tools mentioned to give
 
 ## What's next?
 
-A GUI of course... Maybe for free on the app store for simpler access, but still with a compiled binary and source here for customizability. Given that much wisdom can be found in analyzing the past, maybe it will look something like this:
+It would be great to allow for disabling and re-enabling extensions... Given that much wisdom can be found in analyzing the past, maybe it will look something like this (or later versions):
 
 <img src="https://github.com/krypted/extensionsmanager/blob/main/Images/em3.png" width="400" height="400" />
 
-The project currently only provides information about existing extensions and doesn't have any options to manage extensions. It would be trivial to unload extensions or provide an option to delete an application bundle that is used to load an extension but is currently beyond the scope of what we're trying to accomplish. We also didn't add the ability to see what apps use the extension symbols in compiled form, but instead that's at https://krypted.com/mac-os-x/new-tool-to-recursively-search-all-macos-binaries-for-symbols/ (these can take all night to run).
+It would be trivial to unload extensions or provide an option to delete an application bundle (or archive to a location an extension can't run at) that is used to load an extension but is currently beyond the scope of what we're trying to accomplish. We also didn't add the ability to see what apps use the extension symbols in compiled form, but instead that's at https://krypted.com/mac-os-x/new-tool-to-recursively-search-all-macos-binaries-for-symbols/ (these can take all night to run).
