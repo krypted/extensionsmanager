@@ -60,7 +60,7 @@ The App Sandbox won't allow running command line tools/accessing APIs used in th
 
 To fix, change the "Enable App Sandbox" option to No.
 
-<img src="https://github.com/krypted/extensionsmanager/blob/main/Images/xc2.png" width="550" height="400" />
+<img src="https://github.com/krypted/extensionsmanager/blob/main/Images/xc2.png" width="300" height="150" />
 
 ## What's next?
 
