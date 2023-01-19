@@ -712,14 +712,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="765" height="577"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvY-wR-yMT">
+                                <rect key="frame" x="4" y="551" width="400" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="EMp-n0-Vi7"/>
+                                </constraints>
+                                <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Search" usesSingleLineMode="YES" bezelStyle="round" sendsSearchStringImmediately="YES" id="o7d-Dd-M3O">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </searchFieldCell>
+                            </searchField>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pV-Lp-EC6">
-                                <rect key="frame" x="0.0" y="96" width="765" height="481"/>
+                                <rect key="frame" x="0.0" y="96" width="765" height="451"/>
                                 <clipView key="contentView" drawsBackground="NO" id="bIB-1A-48d">
-                                    <rect key="frame" x="1" y="1" width="763" height="479"/>
+                                    <rect key="frame" x="1" y="1" width="763" height="449"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="eLZ-lO-ML7" viewBased="YES" id="vAe-dw-Mm2">
-                                            <rect key="frame" x="0.0" y="0.0" width="1004" height="451"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1004" height="421"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="17" height="0.0"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -735,6 +746,7 @@
                                                         <color key="textColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
+                                                    <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="name" ascending="NO"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="NameCell" id="bbs-fg-axg">
@@ -767,6 +779,7 @@
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
+                                                    <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="vendor" ascending="NO"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="in0-LX-lm6">
@@ -799,6 +812,7 @@
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
+                                                    <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="type" ascending="NO"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="Qt4-lO-ltt">
@@ -831,6 +845,7 @@
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
+                                                    <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="status" ascending="NO"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="bdx-CN-7FR">
@@ -863,6 +878,7 @@
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
+                                                    <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="path" ascending="NO"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="Fcz-2N-UHs">
@@ -895,6 +911,7 @@
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
+                                                    <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="version" ascending="NO"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="CWf-Kl-dcF">
@@ -927,6 +944,7 @@
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
+                                                    <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="sdk" ascending="NO"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="31e-tu-pw7">
@@ -955,7 +973,7 @@
                                     <nil key="backgroundColor"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="fSl-8c-0RV">
-                                    <rect key="frame" x="1" y="464" width="763" height="16"/>
+                                    <rect key="frame" x="1" y="434" width="763" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="vcs-6z-qX7">
@@ -1167,7 +1185,7 @@
                                 </constraints>
                             </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lfQ-8c-Yjl">
-                                <rect key="frame" x="355" y="324" width="56" height="26"/>
+                                <rect key="frame" x="355" y="309" width="56" height="26"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="SrI-2n-YHQ">
                                     <font key="font" textStyle="title1" name=".SFNS-Regular"/>
                                     <color key="textColor" name="grey"/>
@@ -1176,11 +1194,13 @@
                             </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="3pV-Lp-EC6" firstAttribute="top" secondItem="VvY-wR-yMT" secondAttribute="bottom" constant="4" id="1Ed-Nh-fN0"/>
                             <constraint firstItem="CSk-Pp-gBS" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="4cL-Fw-S1s"/>
-                            <constraint firstItem="3pV-Lp-EC6" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="MsM-hL-2j6"/>
+                            <constraint firstItem="VvY-wR-yMT" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="4" id="KPc-wv-ccq"/>
                             <constraint firstItem="lfQ-8c-Yjl" firstAttribute="centerY" secondItem="3pV-Lp-EC6" secondAttribute="centerY" id="gbR-gy-oEI"/>
                             <constraint firstItem="lfQ-8c-Yjl" firstAttribute="centerX" secondItem="3pV-Lp-EC6" secondAttribute="centerX" id="uHP-62-IJd"/>
                             <constraint firstAttribute="trailing" secondItem="3pV-Lp-EC6" secondAttribute="trailing" id="uRE-Ub-F6y"/>
+                            <constraint firstItem="VvY-wR-yMT" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="4" id="xFV-4q-t6W"/>
                             <constraint firstItem="3pV-Lp-EC6" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="y4d-3G-6hR"/>
                             <constraint firstAttribute="bottom" secondItem="CSk-Pp-gBS" secondAttribute="bottom" constant="20" id="yHr-L9-xUJ"/>
                             <constraint firstItem="CSk-Pp-gBS" firstAttribute="top" secondItem="3pV-Lp-EC6" secondAttribute="bottom" constant="20" id="yLh-rn-7Vn"/>
@@ -1190,6 +1210,7 @@
                         <outlet property="all" destination="oxZ-qm-PSC" id="qEm-ns-281"/>
                         <outlet property="message" destination="lfQ-8c-Yjl" id="8uD-OL-hpg"/>
                         <outlet property="network" destination="SE5-E3-and" id="ngU-s8-CjV"/>
+                        <outlet property="searchField" destination="VvY-wR-yMT" id="KmT-id-hPd"/>
                         <outlet property="system" destination="81f-sZ-rrs" id="y8C-S8-2YG"/>
                         <outlet property="tableView" destination="vAe-dw-Mm2" id="Ejy-Lz-syB"/>
                         <outlet property="thirdparty" destination="qaR-gc-cwq" id="JGE-QO-UAN"/>
@@ -1199,7 +1220,7 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="yVE-tQ-Q1F"/>
             </objects>
-            <point key="canvasLocation" x="75" y="854.5"/>
+            <point key="canvasLocation" x="74.5" y="854.5"/>
         </scene>
     </scenes>
     <resources>

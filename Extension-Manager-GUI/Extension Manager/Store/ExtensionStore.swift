@@ -42,7 +42,7 @@ class ExtensionStore {
     }
     
     // MARK: - Plugins
-    func getThirdpartyExtensions() -> Result<[Extension],Error> {
+    private func getThirdpartyExtensions() -> Result<[Extension],Error> {
         getAllPlugins().map{$0.filter{$0.vendor != "Apple"}}
     }
     
@@ -56,23 +56,23 @@ class ExtensionStore {
         runQuery(Query.systemExtension.rawValue)
     }
     
-    func getNetworkExtensions() -> Result<[Extension],Error> {
+    private func getNetworkExtensions() -> Result<[Extension],Error> {
         getAllSystemExtensions().map{$0.network}
     }
     
-    func getSystemExtensionsUnloaded() -> Result<[Extension],Error> {
+    private func getSystemExtensionsUnloaded() -> Result<[Extension],Error> {
         getAllSystemExtensions().map{ items in
             let all = items.network + items.others
             return all.filter{!$0.status}
         }
     }
     
-    func getOtherExtensions() -> Result<[Extension],Error> {
+    private func getOtherExtensions() -> Result<[Extension],Error> {
         getAllSystemExtensions().map{$0.others}
     }
     
     // MARK: - All
-    func getAllExtensions() -> Result<[Extension],Error> {
+    private func getAllExtensions() -> Result<[Extension],Error> {
         var result = [Extension]()
     
         switch getAllPlugins() {
@@ -93,8 +93,132 @@ class ExtensionStore {
         return .success(result)
     }
     
+    // MARK: Filter Data
+    private var extensionsList = [Extension]()
+    private var query = ""
+    private var sort = Sort(type: .name, acending: true)
+    
+    func changeQuery(query: String) -> [Extension] {
+        self.query = query
+        return filterExtensions(query: query, sort: sort, extensions: extensionsList)
+    }
+    
+    func changeSorting(sort: Sort) -> [Extension] {
+        self.sort = sort
+        return filterExtensions(query: query, sort: sort, extensions: extensionsList)
+    }
+    
+    private func filterExtensions(query: String, sort: Sort, extensions: [Extension]) -> [Extension] {
+        var list = extensions
+        if !query.isEmpty {
+            list = list.filter{$0.name.lowercased().starts(with: query.lowercased())}
+        }
+        
+        list = sortExtensions(sort: sort, extensions: list)
+        return list
+    }
+    
+    private func sortExtensions(sort: Sort, extensions: [Extension]) -> [Extension] {
+        var result = extensions
+        let isSorted: (String,String)->Bool = { value1, value2 -> Bool in
+            sort.acending ? value1 < value2 : value1 > value2
+        }
+        
+        switch sort.type {
+        case .name:
+            result = result.sorted(by: { e1, e2 in
+                isSorted(e1.name, e2.name)
+            })
+        case .vendor:
+            result = result.sorted(by: { e1, e2 in
+                isSorted(e1.vendor, e2.vendor)
+            })
+        case .type:
+            result = result.sorted(by: { e1, e2 in
+                isSorted(e1.type, e2.type)
+            })
+        case .status:
+            result = result.sorted(by: { e1, e2 in
+                isSorted(e1.getStatusDescription(), e2.getStatusDescription())
+            })
+        case .path:
+            result = result.sorted(by: { e1, e2 in
+                isSorted(e1.path, e2.path)
+            })
+        case .version:
+            result = result.sorted(by: { e1, e2 in
+                sort.acending ? e1.getVersionNo() < e2.getVersionNo() : e1.getVersionNo() > e2.getVersionNo()
+            })
+        case .sdk:
+            result = result.sorted(by: { e1, e2 in
+                isSorted(e1.sdk, e2.sdk)
+            })
+        }
+        
+        return result
+    }
+    
+    func getExtensions(filter: Filter, query: String, sort: Sort) -> Result<[Extension], Error> {
+        
+        self.query = query
+        self.sort = sort
+        
+        guard !filter.all else {
+            let result = getAllExtensions()
+            
+            // save for later use when user only change search text
+            self.extensionsList = (try? result.get()) ?? []
+            
+            return result.map{ filterExtensions(query: query, sort: sort, extensions: $0) }
+        }
+        
+        var extensionList = [Extension]()
+        
+        if filter.thirdparty {
+            switch getThirdpartyExtensions() {
+            case .success(let items):
+                extensionList.append(contentsOf: items)
+            case .failure(let error):
+                return .failure(error)
+            }
+        }
+        
+        if filter.network {
+            switch getNetworkExtensions() {
+            case .success(let items):
+                extensionList.append(contentsOf: items)
+            case .failure(let error):
+                return .failure(error)
+            }
+        }
+        
+        if filter.system {
+            switch getOtherExtensions() {
+            case .success(let items):
+                extensionList.append(contentsOf: items)
+            case .failure(let error):
+                return .failure(error)
+            }
+        }
+        
+        
+        if filter.unloaded {
+            switch getSystemExtensionsUnloaded() {
+            case .success(let items):
+                extensionList.append(contentsOf: items)
+            case .failure(let error):
+                return .failure(error)
+            }
+        }
+        
+        // save for later use when user only change search text
+        self.extensionsList = extensionList
+        
+        return .success(filterExtensions(query: query, sort: sort, extensions: extensionsList))
+    }
+    
     // MARK: - Raw
-    func getRawData() -> Result<String,Error> {
+    private func getRawData() -> Result<String,Error> {
         var result = ""
         switch getData(query: Query.plugin.rawValue) {
         case .success(let response):
@@ -112,7 +236,6 @@ class ExtensionStore {
         
         return .success(result)
     }
-    
     
     @discardableResult func safeShell(_ command: String) throws -> String {
         let task = Process()

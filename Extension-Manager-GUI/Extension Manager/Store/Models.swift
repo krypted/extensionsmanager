@@ -38,6 +38,58 @@ enum Option: String {
     }
 }
 
+struct Filter {
+    let all: Bool
+    let thirdparty: Bool
+    let network: Bool
+    let system: Bool
+    let unloaded: Bool
+    
+    init(all: Bool, thirdparty: Bool, network: Bool, system: Bool, unloaded: Bool) {
+        self.all = all
+        self.thirdparty = thirdparty
+        self.network = network
+        self.system = system
+        self.unloaded = unloaded
+    }
+}
+
+struct Sort {
+    let type: SortType
+    let acending: Bool
+}
+
+enum SortType {
+    case name
+    case vendor
+    case type
+    case path
+    case status
+    case version
+    case sdk
+    
+    init?(value: String) {
+        switch value {
+        case "name":
+            self = .name
+        case "vendor":
+            self = .vendor
+        case "type":
+            self = .type
+        case "status":
+            self = .status
+        case "path":
+            self = .path
+        case "version":
+            self = .version
+        case "sdk":
+            self = .sdk
+        default:
+            return nil
+        }
+    }
+}
+
 class Extension {
     var name: String
     var status: Bool
@@ -66,6 +118,19 @@ class Extension {
         bundle = ""
         parentName = ""
         type = ""
+    }
+    
+    func getStatusDescription() -> String {
+        return status ? "Installed" : "Not Installed"
+    }
+    
+    func getVersionNo() -> Double {
+        let components = version.components(separatedBy: ".")
+        if components.count > 2 {
+            return Double("\(components[0]).\(components[1])") ?? 0
+        }else {
+            return Double(version) ?? 0
+        }
     }
 }
 

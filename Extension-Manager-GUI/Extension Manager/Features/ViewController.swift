@@ -42,8 +42,10 @@ class ViewController: NSViewController {
     @IBOutlet weak var unloaded: NSSwitch!
     @IBOutlet weak var message: NSTextField!
     @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var searchField: NSSearchField!
     
     private let store = ExtensionStore()
+    
     private var extensionList = [Extension]() {
         didSet {
             if extensionList.isEmpty {
@@ -71,6 +73,8 @@ class ViewController: NSViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        searchField.delegate = self
+        
         loadData()
     }
     
@@ -83,7 +87,7 @@ class ViewController: NSViewController {
     }
     
     private func loadData() {
-        switch getExtensions() {
+        switch store.getExtensions(filter: getFilter(), query: getQuery(), sort: getSort()) {
         case .success(let items):
             extensionList = items
         case .failure(let error):
@@ -92,51 +96,18 @@ class ViewController: NSViewController {
         }
     }
     
-    private func getExtensions() -> Result<[Extension],Error> {
-        
-        // show all
-        guard all.state == .off else { return store.getAllExtensions() }
-        
-        var extensionList = [Extension]()
-        
-        if thirdparty.state == .on {
-            switch store.getThirdpartyExtensions() {
-            case .success(let items):
-                extensionList.append(contentsOf: items)
-            case .failure(let error):
-                return .failure(error)
-            }
-        }
-        
-        if network.state == .on {
-            switch store.getNetworkExtensions() {
-            case .success(let items):
-                extensionList.append(contentsOf: items)
-            case .failure(let error):
-                return .failure(error)
-            }
-        }
-        
-        if system.state == .on {
-            switch store.getOtherExtensions() {
-            case .success(let items):
-                extensionList.append(contentsOf: items)
-            case .failure(let error):
-                return .failure(error)
-            }
-        }
-        
-        
-        if unloaded.state == .on {
-            switch store.getSystemExtensionsUnloaded() {
-            case .success(let items):
-                extensionList.append(contentsOf: items)
-            case .failure(let error):
-                return .failure(error)
-            }
-        }
-        
-        return .success(extensionList)
+    private func getQuery() -> String {
+        searchField.stringValue
+    }
+    
+    private func getSort() -> Sort {
+        let column = tableView.sortDescriptors.first
+        let type = SortType(value: column?.key ?? "")
+        return Sort(type: type ?? .name, acending: column?.ascending ?? true)
+    }
+    
+    private func getFilter() -> Filter {
+        return Filter(all: all.state == .on, thirdparty: thirdparty.state == .on, network: network.state == .on, system: system.state == .on, unloaded: unloaded.state == .on)
     }
 }
 
@@ -161,7 +132,7 @@ extension ViewController: NSTableViewDelegate {
         } else if tableColumn == tableView.tableColumns[2] {
             text = extensionItem.type
         } else if tableColumn == tableView.tableColumns[3] {
-            text = extensionItem.status ? "Installed" : "Not Installed"
+            text = extensionItem.getStatusDescription()
         } else if tableColumn == tableView.tableColumns[4] {
             text = extensionItem.path
         } else if tableColumn == tableView.tableColumns[5] {
@@ -179,5 +150,15 @@ extension ViewController: NSTableViewDelegate {
             return nil
         }
     }
+    
+    func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
+        extensionList = store.changeSorting(sort: getSort())
+    }
 }
 
+extension ViewController: NSSearchFieldDelegate {
+
+    func controlTextDidChange(_ obj: Notification) {
+        extensionList = store.changeQuery(query: getQuery())
+    }
+}
