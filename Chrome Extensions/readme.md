@@ -15,3 +15,47 @@ Extensions are typically comprised of some javasscript and html files (to render
 ```  
 find ~/Library/Application\ Support/Google/Chrome/Default/Extensions -type f -name "*.js" -print0 | xargs -I {} -0 grep 'chrome.contentSettings' "{}" | uniq
 ```
+
+To all the extensions that use all the endpoints:
+```
+apilist=("chrome.accessibilityFeatures" "chrome.action"
+"chrome.alarms" "chrome.audio" "chrome.bookmarks" "chrome.browserAction"
+"chrome.browsingData" "chrome.certificateProvider" "chrome.commands"
+"chrome.contentSettings" "chrome.contextMenus" "chrome.cookies"
+"chrome.debugger" "chrome.declarativeContent" "chrome.declarativeNetRequest"
+"chrome.desktopCapture" "chrome.devtools.inspectedWindow"
+"chrome.devtools.network" "chrome.devtools.panels"
+"chrome.devtools.recorder" "chrome.documentScan" "chrome.dom"
+"chrome.downloads" "chrome.enterprise.deviceAttributes"
+"chrome.enterprise.hardwarePlatform"
+"chrome.enterprise.networkingAttributes" "chrome.enterprise.platformKeys"
+"chrome.events" "chrome.extension" "chrome.extensionTypes"
+"chrome.fileBrowserHandler" "chrome.fileSystemProvider"
+"chrome.fontSettings" "chrome.gcm" "chrome.history" "chrome.i18n"
+"chrome.identity" "chrome.idle" "chrome.input.ime" "chrome.instanceID"
+"chrome.loginState" "chrome.management" "chrome.notifications"
+"chrome.offscreen" "chrome.omnibox" "chrome.pageAction" "chrome.pageCapture"
+"chrome.permissions" "chrome.platformKeys" "chrome.power"
+"chrome.printerProvider" "chrome.printing" "chrome.printingMetrics"
+"chrome.privacy" "chrome.proxy" "chrome.runtime" "chrome.scripting"
+"chrome.search" "chrome.sessions" "chrome.storage" "chrome.system.cpu"
+"chrome.system.display" "chrome.system.memory" "chrome.system.storage"
+"chrome.tabCapture" "chrome.tabGroups" "chrome.tabs" "chrome.topSites"
+"chrome.tts" "chrome.ttsEngine" "chrome.types" "chrome.vpnProvider"
+"chrome.wallpaper" "chrome.wallpaper" "chrome.webNavigation"
+"chrome.webRequest" "chrome.windows" "chrome.automation" "chrome.processes"
+"chrome.app.runtime" "chrome.app.window" "chrome.appviewTag"
+"chrome.bluetooth" "chrome.blueetoothLowEnergy" "chrome.bluetoothSocket"
+"chrome.browser" "chrome.clipboard" "chrome.fileSystem" "chrome.hid"
+"chrome.mdns" "chrome.mediaGalleries" "chrome.networking.onc"
+"chrome.serial" "chrome.socket" "chrome.sockets.tcp"
+"chrome.sockets.tcpServer" "chrome.sockets.udp" "chrome.syncFileSystem"
+"chrome.system.network" "chrome.usb" "chrome.virtualKeyboard"
+"chrome.webviewTag")
+for apis in ${apilist[@]}; do
+  echo "$apis"
+  find ~/Library/Application\ Support/Google/Chrome/Default/Extensions -type
+f -name "*.js" -print0 | xargs -I {} -0 grep $apis "{}" |
+uniq
+done
+```
