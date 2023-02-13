@@ -5,4 +5,5 @@ Browser extensions can perform a number of tasks like access filesystems, gain t
 ```
 find ~/Library/Application\ Support/Google/Chrome/Default/Extensions -type f -name "manifest.json" -print0 | xargs -I {} -0 grep '"name":' "{}" | uniq
 ```
-
+The
+```
