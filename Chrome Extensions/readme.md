@@ -16,7 +16,7 @@ Extensions are typically comprised of some javasscript and html files (to render
 find ~/Library/Application\ Support/Google/Chrome/Default/Extensions -type f -name "*.js" -print0 | xargs -I {} -0 grep 'chrome.contentSettings' "{}" | uniq
 ```
 
-To all the extensions that use all the endpoints:
+To list the Chrome extensions by endpoint used:
 ```
 apilist=("chrome.accessibilityFeatures" "chrome.action"
 "chrome.alarms" "chrome.audio" "chrome.bookmarks" "chrome.browserAction"
@@ -59,3 +59,4 @@ f -name "*.js" -print0 | xargs -I {} -0 grep $apis "{}" |
 uniq
 done
 ```
+There are certainly less error prone or more elegant ways to do this, but that's what I've got for now.
