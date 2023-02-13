@@ -67,7 +67,9 @@ Swift apps aren't the only thing on a Mac that's extensible. For more on telemet
 
 Firefox is similar. Most endpoints are named similarly ( https://github.com/krypted/extensionsmanager/blob/main/Firefox%20Extensions/apisaslist ), but the notation isn't chrome.<API>, it's browser.<API>.<method>. Thefore, the scripts have to be tailored to a different format for expressions. Further, Firefox keeps a simple extensions.json so it's easy to list them https://github.com/krypted/extensionsmanager/tree/main/Firefox%20Extensions. 
 
-Microsoft Edge is also similar, with similarly named endpoints https://github.com/krypted/extensionsmanager/blob/main/Microsoft%20Edge/readme.md.
+Microsoft Edge is also similar, with similarly named endpoints, listed at https://github.com/krypted/extensionsmanager/blob/main/Microsoft%20Edge/apis and a find to locate all the extensions at https://github.com/krypted/extensionsmanager/blob/main/Microsoft%20Edge/readme.md.
+  
+Here, there are three scripts (shell one-liners, really), that can be used to list extensions for each of these browsers (keep in mind that the main project here will list Safari Extensions). The looping and parsing to see which APIs are available is only in the Chrome section from the first paragraph of this section, but the logic and permission structures are similar for the other two, so lists are only a little regex work away.
 
 ## What's next?
 
