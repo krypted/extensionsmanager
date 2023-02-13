@@ -7,5 +7,8 @@ Google Chrome for Mac stores extensions in /Users/<username>/Library/Application
 ```
 find ~/Library/Application\ Support/Google/Chrome/Default/Extensions -type f -name "manifest.json" -print0 | xargs -I {} -0 grep '"name":' "{}" | uniq
 ```
-The
+Extensions are typically comprised of some javasscript and html files (to render what the javascripts are doing in modals, etc). So it's possible to repeat the above, but search for one of the APIs (for example, if one is deemed dangerous):
+
+```  
+find ~/Library/Application\ Support/Google/Chrome/Default/Extensions -type f -name "*.js" -print0 | xargs -I {} -0 grep 'chrome.contentSettings' "{}" | uniq
 ```
