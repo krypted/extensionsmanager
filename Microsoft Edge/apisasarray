@@ -1,0 +1,10 @@
+apis = (“alarms” “bookmarks” “browserAction” “browsingData” “commands” 
+“contentSettings” “contextMenus” “cookies” “debugger” “declarativeContent” 
+“declarativeNetRequest” “desktopCapture” “devtools.network” 
+“devtools.panels” “downloads” “enterprise.hardwarePlatform” “events” 
+“extension” “extensionTypes” “fontSettings” “history” “i18n” “idle” 
+“management” “notifications” “omnibox” “pageAction” “pageCapture” 
+“permissions” “power” “printerProvider” “privacy” “proxy” “runtime” 
+“sessions” “storage” “system.memory” “system.storage” “tabCapture” 
+“tabsInteract” “topSites” “tts” “ttsEngine” “types” “webNavigation” 
+“webRequest”)
