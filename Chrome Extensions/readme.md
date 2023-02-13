@@ -9,6 +9,11 @@ Google Chrome for Mac stores extensions in /Users/<username>/Library/Application
 find ~/Library/Application\ Support/Google/Chrome/Default/Extensions -type f -name "manifest.json" -print0 | xargs -I {} -0 grep '"name":' "{}" | uniq
 ``` 
 
+There are other fields that could be parsed out as well, and the xargs could be further refined to only include the quoted name rather than the uglier json, but this satisfies my own need. One of those fields that is important for people concerned about the security of various extensions is permissions, which can grant an extension the ability to access cameras, storage (e.g. through nmp), downloads, interact with a native app, obtain data from pastebin, etc:
+
+```
+"permissions": [ "activeTab", "alarms", "scripting", "storage" ],
+```
 ## Find Extensions That Use A Specific Endpoint
 Extensions are typically comprised of some javasscript and html files (to render what the javascripts are doing in modals, etc). So it's possible to repeat the above, but search for one of the APIs (for example, if one is deemed dangerous):
 
