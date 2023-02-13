@@ -62,6 +62,9 @@ To fix, change the "Enable App Sandbox" option to No.
 
 <img src="https://github.com/krypted/extensionsmanager/blob/main/Images/xc2.png" width="300" height="150" />
 
+## Other Types of Extensions
+Swift apps aren't the only thing on a Mac that's extensible. For more on telemetry into what Chrome Extensions are doing and to list them, see https://github.com/krypted/extensionsmanager/tree/main/Chrome%20Extensions
+
 ## What's next?
 
 It would be great to allow for disabling and re-enabling extensions... Given that much wisdom can be found in analyzing the past, maybe it will look something like this (or later versions):
