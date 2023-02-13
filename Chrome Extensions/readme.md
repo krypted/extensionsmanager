@@ -59,4 +59,4 @@ f -name "*.js" -print0 | xargs -I {} -0 grep $apis "{}" |
 uniq
 done
 ```
-There are certainly less error prone or more elegant ways to do this, but that's what I've got for now. The array can be reduced to only list apis deemed safe (e.g. chrome.audio). Output can also be parsed to be more appropriate for different processing tools (e.g. in json or yaml). Further, it's also possible to remove the extensions by simply doing an rm of the guid-named directory each is stored in.
+There are certainly less error prone or more elegant ways to do this, but that's what I've got for now. The array can be reduced to only list apis deemed safe (e.g. chrome.audio). Output can also be parsed to be more appropriate for different processing tools (e.g. in json or yaml). Further, it's also possible to remove the extensions by simply doing an rm of the guid-named directory each is stored in (although a kill on the Chrome process would help reduce any oddities an end user might experience).
