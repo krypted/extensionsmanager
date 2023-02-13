@@ -63,7 +63,9 @@ To fix, change the "Enable App Sandbox" option to No.
 <img src="https://github.com/krypted/extensionsmanager/blob/main/Images/xc2.png" width="300" height="150" />
 
 ## Other Types of Extensions
-Swift apps aren't the only thing on a Mac that's extensible. For more on telemetry into what Chrome Extensions are doing and to list them, see https://github.com/krypted/extensionsmanager/tree/main/Chrome%20Extensions. Keep in mind that as users use Chrome they grant more and more entitlements to the browser. For a list of Chrome extension APIs that can be consumed by basic javascripts, see https://github.com/krypted/extensionsmanager/blob/main/Chrome%20Extensions/apilist.
+Swift apps aren't the only thing on a Mac that's extensible. For more on telemetry into what Chrome Extensions are doing and to list them, see https://github.com/krypted/extensionsmanager/tree/main/Chrome%20Extensions. Keep in mind that as users use Chrome they grant more and more entitlements to the browser. For a list of Chrome extension APIs that can be consumed by basic javascripts, see https://github.com/krypted/extensionsmanager/blob/main/Chrome%20Extensions/apilist. 
+
+Firefox is similar. Most endpoints are named similarly ( https://github.com/krypted/extensionsmanager/blob/main/Firefox%20Extensions/apisaslist ), but the notation isn't chrome.<API>, it's browser.<API>.<method>. Thefore, the scripts have to be tailored to a different format for expressions. Further, Firefox keeps a simple extensions.json so it's easy to list them https://github.com/krypted/extensionsmanager/tree/main/Firefox%20Extensions. 
 
 ## What's next?
 
