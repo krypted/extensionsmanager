@@ -67,6 +67,8 @@ Swift apps aren't the only thing on a Mac that's extensible. For more on telemet
 
 Firefox is similar. Most endpoints are named similarly ( https://github.com/krypted/extensionsmanager/blob/main/Firefox%20Extensions/apisaslist ), but the notation isn't chrome.<API>, it's browser.<API>.<method>. Thefore, the scripts have to be tailored to a different format for expressions. Further, Firefox keeps a simple extensions.json so it's easy to list them https://github.com/krypted/extensionsmanager/tree/main/Firefox%20Extensions. 
 
+Microsoft Edge is also similar, with similarly named endpoints https://github.com/krypted/extensionsmanager/blob/main/Microsoft%20Edge/readme.md.
+
 ## What's next?
 
 It would be great to allow for disabling and re-enabling extensions... Given that much wisdom can be found in analyzing the past, maybe it will look something like this (or later versions):
