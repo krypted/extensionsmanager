@@ -1,4 +1,6 @@
-edge extensions
+# APIs Used in Microsoft Edge Extensions
+
+APIs come in the format of API name followed by the method. Available APIs are as listed below:
 
 alarms
 bookmarks
