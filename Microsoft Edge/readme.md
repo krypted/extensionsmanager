@@ -6,3 +6,12 @@ Edge for Mac stores a list of extensions in ~/Library/Application\ Support/Micro
 ```
 find ~/Library/Application\ Support/Microsoft\ Edge/Default/Extensions -type f -name "manifest.json" -print0 | xargs -I {} -0 grep '"name":' "{}" | uniq
 ```
+Microsoft Edge exposes a few features in a property list, but none involve extensions (the traditional method for Mac management).
+```
+defaults read ~/Library/Preferences/com.microsoft.edgemac.plist 
+{
+    LastRunAppBundlePath = "/Applications/Microsoft Edge.app";
+    LoginKeychainEmpty = 1;
+    OptionalDataCollectionEnabled = 0;
+}
+```
