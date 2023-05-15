@@ -1,7 +1,8 @@
 //
 //  Option.swift
+//  extensionsman
 //
-//  Charles Edge
+//  Created by Charles Edge on 05/15/2023.
 //
 
 import Foundation
@@ -14,6 +15,9 @@ enum Option: String {
     case system = "s"
     case systemUnloaded = "u"
     case help = "h"
+    case googleChrome = "c"
+    case microsoftEdge = "e"
+    case firefox = "f"
     case unknown
     
     init(value: String) {
@@ -30,6 +34,12 @@ enum Option: String {
             self = .system
         case "u":
             self = .systemUnloaded
+        case "c":
+            self = .googleChrome
+        case "e":
+            self = .microsoftEdge
+        case "f":
+            self = .firefox
         case "h":
             self = .help
         default:

@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		891F26322A0CF9E60061AAFE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891F26312A0CF9E60061AAFE /* Extension.swift */; };
+		891F26342A0CFA100061AAFE /* Parseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891F26332A0CFA100061AAFE /* Parseable.swift */; };
+		891F26362A0CFA3F0061AAFE /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891F26352A0CFA3F0061AAFE /* Plugin.swift */; };
+		891F26382A0CFAE70061AAFE /* SystemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891F26372A0CFAE70061AAFE /* SystemExtension.swift */; };
+		891F263B2A0CFBB80061AAFE /* Extensions+extensionman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891F263A2A0CFBB80061AAFE /* Extensions+extensionman.swift */; };
+		891F263F2A0D01930061AAFE /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891F263E2A0D01930061AAFE /* RequestModel.swift */; };
+		891F26422A0E235E0061AAFE /* BrowserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891F26402A0D05FB0061AAFE /* BrowserExtension.swift */; };
+		891F26462A0E8FA00061AAFE /* Firefox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891F26452A0E8FA00061AAFE /* Firefox.swift */; };
 		89AC443A2951F56300446515 /* ExtensionMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC44352951F56200446515 /* ExtensionMan.swift */; };
 		89AC443B2951F56300446515 /* ExtensionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC44362951F56300446515 /* ExtensionStore.swift */; };
 		89AC443C2951F56300446515 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC44372951F56300446515 /* Filter.swift */; };
 		89AC443D2951F56300446515 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC44382951F56300446515 /* main.swift */; };
 		89AC443E2951F56300446515 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC44392951F56300446515 /* ConsoleIO.swift */; };
 		89AC44402951F6CA00446515 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC443F2951F6CA00446515 /* Option.swift */; };
-		89C6C839295C6A3D004D3E9D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C6C838295C6A3D004D3E9D /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +36,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		891F26312A0CF9E60061AAFE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		891F26332A0CFA100061AAFE /* Parseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parseable.swift; sourceTree = "<group>"; };
+		891F26352A0CFA3F0061AAFE /* Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
+		891F26372A0CFAE70061AAFE /* SystemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemExtension.swift; sourceTree = "<group>"; };
+		891F263A2A0CFBB80061AAFE /* Extensions+extensionman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+extensionman.swift"; sourceTree = "<group>"; };
+		891F263E2A0D01930061AAFE /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
+		891F26402A0D05FB0061AAFE /* BrowserExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserExtension.swift; sourceTree = "<group>"; };
+		891F26452A0E8FA00061AAFE /* Firefox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firefox.swift; sourceTree = "<group>"; };
 		89AC442B2951F53200446515 /* extensionsman */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = extensionsman; sourceTree = BUILT_PRODUCTS_DIR; };
 		89AC44352951F56200446515 /* ExtensionMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionMan.swift; sourceTree = "<group>"; };
 		89AC44362951F56300446515 /* ExtensionStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionStore.swift; sourceTree = "<group>"; };
@@ -36,7 +51,6 @@
 		89AC44382951F56300446515 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		89AC44392951F56300446515 /* ConsoleIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleIO.swift; sourceTree = "<group>"; };
 		89AC443F2951F6CA00446515 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
-		89C6C838295C6A3D004D3E9D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +64,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		891F26302A0CF9B30061AAFE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				89AC443F2951F6CA00446515 /* Option.swift */,
+				89AC44372951F56300446515 /* Filter.swift */,
+				891F26312A0CF9E60061AAFE /* Extension.swift */,
+				891F26332A0CFA100061AAFE /* Parseable.swift */,
+				891F26352A0CFA3F0061AAFE /* Plugin.swift */,
+				891F26372A0CFAE70061AAFE /* SystemExtension.swift */,
+				891F26402A0D05FB0061AAFE /* BrowserExtension.swift */,
+				891F26452A0E8FA00061AAFE /* Firefox.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		891F26392A0CFBAD0061AAFE /* Utilitiy */ = {
+			isa = PBXGroup;
+			children = (
+				891F263A2A0CFBB80061AAFE /* Extensions+extensionman.swift */,
+			);
+			path = Utilitiy;
+			sourceTree = "<group>";
+		};
+		891F263C2A0CFBF10061AAFE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				89AC44382951F56300446515 /* main.swift */,
+				89AC44352951F56200446515 /* ExtensionMan.swift */,
+				89AC44392951F56300446515 /* ConsoleIO.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		891F263D2A0D01850061AAFE /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				891F263E2A0D01930061AAFE /* RequestModel.swift */,
+				89AC44362951F56300446515 /* ExtensionStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		89AC44222951F53200446515 = {
 			isa = PBXGroup;
 			children = (
@@ -69,13 +125,10 @@
 		89AC442D2951F53200446515 /* extensionsman */ = {
 			isa = PBXGroup;
 			children = (
-				89AC44392951F56300446515 /* ConsoleIO.swift */,
-				89AC44362951F56300446515 /* ExtensionStore.swift */,
-				89AC44372951F56300446515 /* Filter.swift */,
-				89AC44382951F56300446515 /* main.swift */,
-				89AC44352951F56200446515 /* ExtensionMan.swift */,
-				89AC443F2951F6CA00446515 /* Option.swift */,
-				89C6C838295C6A3D004D3E9D /* Models.swift */,
+				891F263C2A0CFBF10061AAFE /* App */,
+				891F263D2A0D01850061AAFE /* Store */,
+				891F26392A0CFBAD0061AAFE /* Utilitiy */,
+				891F26302A0CF9B30061AAFE /* Models */,
 			);
 			path = extensionsman;
 			sourceTree = "<group>";
@@ -141,11 +194,18 @@
 			files = (
 				89AC443E2951F56300446515 /* ConsoleIO.swift in Sources */,
 				89AC443A2951F56300446515 /* ExtensionMan.swift in Sources */,
+				891F26382A0CFAE70061AAFE /* SystemExtension.swift in Sources */,
+				891F26342A0CFA100061AAFE /* Parseable.swift in Sources */,
 				89AC443C2951F56300446515 /* Filter.swift in Sources */,
 				89AC443D2951F56300446515 /* main.swift in Sources */,
+				891F263B2A0CFBB80061AAFE /* Extensions+extensionman.swift in Sources */,
 				89AC44402951F6CA00446515 /* Option.swift in Sources */,
+				891F26462A0E8FA00061AAFE /* Firefox.swift in Sources */,
 				89AC443B2951F56300446515 /* ExtensionStore.swift in Sources */,
-				89C6C839295C6A3D004D3E9D /* Models.swift in Sources */,
+				891F26362A0CFA3F0061AAFE /* Plugin.swift in Sources */,
+				891F26322A0CF9E60061AAFE /* Extension.swift in Sources */,
+				891F26422A0E235E0061AAFE /* BrowserExtension.swift in Sources */,
+				891F263F2A0D01930061AAFE /* RequestModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,7 +1,8 @@
 //
 //  ConsoleIO.swift
+//  Panagram
 //
-//  Charles Edge
+//  Created by Charles Edge on 05/15/2023.
 //
 
 import Foundation
@@ -33,6 +34,12 @@ class ConsoleIO {
         writeMessage("\(executableName) -s to show system extensions except network extensions")
         writeMessage("or")
         writeMessage("\(executableName) -u to show unloaded system extensions")
+        writeMessage("or")
+        writeMessage("\(executableName) -c to show google chrome extensions")
+        writeMessage("or")
+        writeMessage("\(executableName) -e to show microsoft edge extensions")
+        writeMessage("or")
+        writeMessage("\(executableName) -f to show firefox extensions")
         writeMessage("or")
         writeMessage("\(executableName) -raw to show unformatted result")
         writeMessage("or")

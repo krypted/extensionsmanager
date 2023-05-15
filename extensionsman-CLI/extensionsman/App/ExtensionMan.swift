@@ -1,7 +1,8 @@
 //
 //  Panagram.swift
+//  Panagram
 //
-//  Charles Edge
+//  Created by Charles Edge on 05/15/2023.
 //
 
 import Foundation
@@ -9,7 +10,7 @@ import Foundation
 class ExtensionMan {
     
     let consoleIO = ConsoleIO()
-    let store = ExtensionStore()
+    let store = ExtensionStore(requestModel: RequestModel())
     
     func staticMode() {
         
@@ -25,7 +26,7 @@ class ExtensionMan {
         
         switch option {
         case .raw:
-            let result = store.getRawData().map{[$0]}
+            let result = store.getRawData().map{ [$0] }
             show(result: result)
         case .all:
             let result = store.getAllExtensions()
@@ -42,12 +43,25 @@ class ExtensionMan {
         case .systemUnloaded:
             let result = store.getSystemExtensionsUnloaded()
             show(result: result)
+        case .googleChrome:
+            show(result: store.getChromeExtensions())
+        case .microsoftEdge:
+            show(result: store.getMicrosoftEdgeExtensions())
+        case .firefox:
+            show(result: store.getFirefoxExtensions())
         case .help:
             consoleIO.printUsage()
         case .unknown:
             consoleIO.writeMessage("Unknown option \(value)")
             consoleIO.printUsage()
         }
+    }
+    
+    func show(result: Result<[Extension],Error>) {
+        let strings = result.map{ extensions in
+            extensions.map { $0.name }
+        }
+        show(result: strings)
     }
     
     func show(result: Result<[String],Error>) {
