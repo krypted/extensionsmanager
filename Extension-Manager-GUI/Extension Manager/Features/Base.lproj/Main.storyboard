@@ -709,7 +709,7 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Extension_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="765" height="577"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="577"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvY-wR-yMT">
@@ -724,9 +724,9 @@
                                 </searchFieldCell>
                             </searchField>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pV-Lp-EC6">
-                                <rect key="frame" x="0.0" y="96" width="765" height="451"/>
+                                <rect key="frame" x="0.0" y="96" width="1000" height="451"/>
                                 <clipView key="contentView" drawsBackground="NO" id="bIB-1A-48d">
-                                    <rect key="frame" x="1" y="1" width="763" height="449"/>
+                                    <rect key="frame" x="1" y="1" width="998" height="449"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="eLZ-lO-ML7" viewBased="YES" id="vAe-dw-Mm2">
@@ -973,7 +973,7 @@
                                     <nil key="backgroundColor"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="fSl-8c-0RV">
-                                    <rect key="frame" x="1" y="434" width="763" height="16"/>
+                                    <rect key="frame" x="1" y="434" width="998" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="vcs-6z-qX7">
@@ -986,9 +986,9 @@
                                 </tableHeaderView>
                             </scrollView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="CSk-Pp-gBS">
-                                <rect key="frame" x="46" y="20" width="673" height="56"/>
+                                <rect key="frame" x="47" y="20" width="906" height="56"/>
                                 <subviews>
-                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yoy-kN-F6E">
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yoy-kN-F6E" userLabel="stack1">
                                         <rect key="frame" x="0.0" y="0.0" width="170" height="56"/>
                                         <subviews>
                                             <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Wr-ha-FeB">
@@ -1061,22 +1061,22 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
-                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZiJ-ZV-bA3">
-                                        <rect key="frame" x="224" y="0.0" width="170" height="56"/>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZiJ-ZV-bA3" userLabel="stack2">
+                                        <rect key="frame" x="190" y="0.0" width="188" height="56"/>
                                         <subviews>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ix-Nt-r3a">
-                                                <rect key="frame" x="0.0" y="34" width="170" height="22"/>
+                                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ix-Nt-r3a">
+                                                <rect key="frame" x="0.0" y="34" width="188" height="22"/>
                                                 <subviews>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8RK-Kk-InS">
-                                                        <rect key="frame" x="-2" y="5" width="136" height="13"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Hide Apple Extensions" id="JNg-Tc-ff5">
+                                                        <rect key="frame" x="-2" y="5" width="139" height="13"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Show Thirdparty Extensions" id="JNg-Tc-ff5">
                                                             <font key="font" metaFont="system" size="10"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
                                                     <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="qaR-gc-cwq" customClass="CustomSwitch" customModule="Extension_Manager" customModuleProvider="target">
-                                                        <rect key="frame" x="130" y="-2" width="42" height="25"/>
+                                                        <rect key="frame" x="148" y="-2" width="42" height="25"/>
                                                         <connections>
                                                             <action selector="valueChanged:" target="XfG-lQ-9wD" id="NcQ-J4-akU"/>
                                                         </connections>
@@ -1092,10 +1092,10 @@
                                                 </customSpacing>
                                             </stackView>
                                             <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hQG-6W-PA9">
-                                                <rect key="frame" x="0.0" y="0.0" width="170" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="188" height="22"/>
                                                 <subviews>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dKf-Di-5pI">
-                                                        <rect key="frame" x="-2" y="5" width="136" height="13"/>
+                                                        <rect key="frame" x="-2" y="5" width="154" height="13"/>
                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="System Extensions" id="aXy-c9-3Xg">
                                                             <font key="font" metaFont="system" size="10"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1103,7 +1103,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="81f-sZ-rrs">
-                                                        <rect key="frame" x="130" y="-2" width="42" height="25"/>
+                                                        <rect key="frame" x="148" y="-2" width="42" height="25"/>
                                                         <connections>
                                                             <action selector="valueChanged:" target="XfG-lQ-9wD" id="VG6-vr-eql"/>
                                                         </connections>
@@ -1120,7 +1120,7 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="hQG-6W-PA9" firstAttribute="width" secondItem="0Ix-Nt-r3a" secondAttribute="width" id="tQD-Jh-gcz"/>
+                                            <constraint firstItem="hQG-6W-PA9" firstAttribute="width" secondItem="ZiJ-ZV-bA3" secondAttribute="width" id="IBX-Va-6wg"/>
                                         </constraints>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
@@ -1131,24 +1131,137 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
-                                    <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJX-Ou-JUE">
-                                        <rect key="frame" x="448" y="0.0" width="225" height="22"/>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Jt-wp-clp" userLabel="stack3">
+                                        <rect key="frame" x="398" y="0.0" width="225" height="56"/>
                                         <subviews>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2oL-G4-SQs">
-                                                <rect key="frame" x="-2" y="5" width="176" height="13"/>
-                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Show Uninstalled System Extension" id="Nsr-SQ-FDd">
-                                                    <font key="font" metaFont="system" size="10"/>
-                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                </textFieldCell>
-                                            </textField>
-                                            <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="bNG-dW-DLL">
-                                                <rect key="frame" x="185" y="-2" width="42" height="25"/>
-                                                <connections>
-                                                    <action selector="valueChanged:" target="XfG-lQ-9wD" id="hx4-mh-b8R"/>
-                                                </connections>
-                                            </switch>
+                                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QGD-Zt-NgJ" userLabel="uninstalled">
+                                                <rect key="frame" x="0.0" y="34" width="225" height="22"/>
+                                                <subviews>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DPg-QU-2qX">
+                                                        <rect key="frame" x="-2" y="5" width="176" height="13"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Show Uninstalled System Extension" id="UNy-Id-yfO">
+                                                            <font key="font" metaFont="system" size="10"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="37b-Lx-Oye">
+                                                        <rect key="frame" x="185" y="-2" width="42" height="25"/>
+                                                        <connections>
+                                                            <action selector="valueChanged:" target="XfG-lQ-9wD" id="9qd-I0-WTy"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                                <visibilityPriorities>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                </visibilityPriorities>
+                                                <customSpacing>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                </customSpacing>
+                                            </stackView>
+                                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mf0-Lr-lXc" userLabel="chrome">
+                                                <rect key="frame" x="0.0" y="0.0" width="225" height="22"/>
+                                                <subviews>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vgj-ZP-IKH">
+                                                        <rect key="frame" x="-2" y="5" width="191" height="13"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Google Chrome Extensions" id="Cus-gm-PYo">
+                                                            <font key="font" metaFont="system" size="10"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="Pzn-Zo-Zkr">
+                                                        <rect key="frame" x="185" y="-2" width="42" height="25"/>
+                                                        <connections>
+                                                            <action selector="valueChanged:" target="XfG-lQ-9wD" id="acv-c4-Ymf"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                                <visibilityPriorities>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                </visibilityPriorities>
+                                                <customSpacing>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                </customSpacing>
+                                            </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="mf0-Lr-lXc" firstAttribute="width" secondItem="QGD-Zt-NgJ" secondAttribute="width" id="1RA-zP-sp2"/>
+                                        </constraints>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Gm-kD-IMG" userLabel="stack4">
+                                        <rect key="frame" x="643" y="0.0" width="176" height="56"/>
+                                        <subviews>
+                                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Nj-2t-ChD" userLabel="edge">
+                                                <rect key="frame" x="0.0" y="34" width="176" height="22"/>
+                                                <subviews>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qr6-mI-aoX">
+                                                        <rect key="frame" x="-2" y="5" width="127" height="13"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Microsoft Edge Extension" id="hGL-hg-IBz">
+                                                            <font key="font" metaFont="system" size="10"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="WkA-a6-khk">
+                                                        <rect key="frame" x="136" y="-2" width="42" height="25"/>
+                                                        <connections>
+                                                            <action selector="valueChanged:" target="XfG-lQ-9wD" id="cE2-Li-mV1"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                                <visibilityPriorities>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                </visibilityPriorities>
+                                                <customSpacing>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                </customSpacing>
+                                            </stackView>
+                                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Yi-Ls-lQ1" userLabel="firefox">
+                                                <rect key="frame" x="0.0" y="0.0" width="176" height="22"/>
+                                                <subviews>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aHg-2L-pY0">
+                                                        <rect key="frame" x="-2" y="5" width="142" height="13"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Firefox Extensions" id="Cmv-cN-cTX">
+                                                            <font key="font" metaFont="system" size="10"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="dAN-eB-qlw">
+                                                        <rect key="frame" x="136" y="-2" width="42" height="25"/>
+                                                        <connections>
+                                                            <action selector="valueChanged:" target="XfG-lQ-9wD" id="qc0-Wc-qcA"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                                <visibilityPriorities>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                </visibilityPriorities>
+                                                <customSpacing>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                </customSpacing>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="9Yi-Ls-lQ1" firstAttribute="width" secondItem="3Nj-2t-ChD" secondAttribute="width" id="B4V-VQ-9Cf"/>
+                                        </constraints>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
@@ -1159,7 +1272,7 @@
                                         </customSpacing>
                                     </stackView>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DS9-uT-J8w">
-                                        <rect key="frame" x="520" y="27" width="81" height="32"/>
+                                        <rect key="frame" x="832" y="11" width="81" height="32"/>
                                         <buttonCell key="cell" type="push" title="Refresh" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tAI-Bv-dwV">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -1170,22 +1283,25 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="0Ix-Nt-r3a" firstAttribute="width" secondItem="jn7-Cp-dAx" secondAttribute="width" id="BUJ-13-Y4y"/>
-                                    <constraint firstItem="hJX-Ou-JUE" firstAttribute="bottom" secondItem="ZiJ-ZV-bA3" secondAttribute="bottom" id="Dd2-UY-pky"/>
-                                    <constraint firstItem="ZiJ-ZV-bA3" firstAttribute="leading" secondItem="Yoy-kN-F6E" secondAttribute="trailing" constant="54" id="Eej-QS-g2S"/>
+                                    <constraint firstItem="1Gm-kD-IMG" firstAttribute="leading" secondItem="9Jt-wp-clp" secondAttribute="trailing" constant="20" id="CH7-eF-ytW"/>
+                                    <constraint firstItem="DS9-uT-J8w" firstAttribute="leading" secondItem="1Gm-kD-IMG" secondAttribute="trailing" constant="20" id="COT-1A-E3d"/>
+                                    <constraint firstItem="ZiJ-ZV-bA3" firstAttribute="leading" secondItem="Yoy-kN-F6E" secondAttribute="trailing" constant="20" id="Eej-QS-g2S"/>
                                     <constraint firstItem="Yoy-kN-F6E" firstAttribute="top" secondItem="CSk-Pp-gBS" secondAttribute="top" id="HCQ-Vi-CsI"/>
+                                    <constraint firstItem="9Jt-wp-clp" firstAttribute="leading" secondItem="ZiJ-ZV-bA3" secondAttribute="trailing" constant="20" id="NwY-ss-Eap"/>
+                                    <constraint firstItem="9Jt-wp-clp" firstAttribute="top" secondItem="ZiJ-ZV-bA3" secondAttribute="top" id="UNR-TW-HaS"/>
+                                    <constraint firstItem="1Gm-kD-IMG" firstAttribute="top" secondItem="9Jt-wp-clp" secondAttribute="top" id="V31-US-Qcc"/>
+                                    <constraint firstAttribute="trailing" secondItem="DS9-uT-J8w" secondAttribute="trailing" id="WSh-1p-91x"/>
                                     <constraint firstAttribute="bottom" secondItem="Yoy-kN-F6E" secondAttribute="bottom" id="brp-y1-KRt"/>
-                                    <constraint firstItem="hJX-Ou-JUE" firstAttribute="leading" secondItem="ZiJ-ZV-bA3" secondAttribute="trailing" constant="54" id="cBX-w7-BEe"/>
                                     <constraint firstItem="ZiJ-ZV-bA3" firstAttribute="bottom" secondItem="Yoy-kN-F6E" secondAttribute="bottom" id="dV4-yU-t3P"/>
                                     <constraint firstItem="ZiJ-ZV-bA3" firstAttribute="top" secondItem="Yoy-kN-F6E" secondAttribute="top" id="iG6-cX-QI2"/>
-                                    <constraint firstAttribute="trailing" secondItem="hJX-Ou-JUE" secondAttribute="trailing" id="jRS-kE-Xj7"/>
-                                    <constraint firstItem="hJX-Ou-JUE" firstAttribute="top" secondItem="DS9-uT-J8w" secondAttribute="bottom" constant="12" id="p5y-sE-zXd"/>
-                                    <constraint firstItem="DS9-uT-J8w" firstAttribute="centerX" secondItem="hJX-Ou-JUE" secondAttribute="centerX" id="pvh-hN-hTm"/>
+                                    <constraint firstItem="DS9-uT-J8w" firstAttribute="centerY" secondItem="CSk-Pp-gBS" secondAttribute="centerY" id="jzG-V3-zZ7"/>
+                                    <constraint firstItem="1Gm-kD-IMG" firstAttribute="bottom" secondItem="9Jt-wp-clp" secondAttribute="bottom" id="w7o-l7-7RX"/>
                                     <constraint firstItem="Yoy-kN-F6E" firstAttribute="leading" secondItem="CSk-Pp-gBS" secondAttribute="leading" id="y8K-yn-Vag"/>
+                                    <constraint firstItem="9Jt-wp-clp" firstAttribute="bottom" secondItem="ZiJ-ZV-bA3" secondAttribute="bottom" id="ylS-S0-KQO"/>
                                 </constraints>
                             </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lfQ-8c-Yjl">
-                                <rect key="frame" x="355" y="309" width="56" height="26"/>
+                                <rect key="frame" x="472" y="307" width="56" height="30"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="SrI-2n-YHQ">
                                     <font key="font" textStyle="title1" name=".SFNS-Regular"/>
                                     <color key="textColor" name="grey"/>
@@ -1208,13 +1324,16 @@
                     </view>
                     <connections>
                         <outlet property="all" destination="oxZ-qm-PSC" id="qEm-ns-281"/>
+                        <outlet property="fireFox" destination="dAN-eB-qlw" id="6dX-6E-S5Z"/>
+                        <outlet property="googleChrome" destination="Pzn-Zo-Zkr" id="RTZ-TF-7UI"/>
                         <outlet property="message" destination="lfQ-8c-Yjl" id="8uD-OL-hpg"/>
+                        <outlet property="microsoftEdge" destination="WkA-a6-khk" id="gvj-P4-bW7"/>
                         <outlet property="network" destination="SE5-E3-and" id="ngU-s8-CjV"/>
                         <outlet property="searchField" destination="VvY-wR-yMT" id="KmT-id-hPd"/>
                         <outlet property="system" destination="81f-sZ-rrs" id="y8C-S8-2YG"/>
                         <outlet property="tableView" destination="vAe-dw-Mm2" id="Ejy-Lz-syB"/>
                         <outlet property="thirdparty" destination="qaR-gc-cwq" id="JGE-QO-UAN"/>
-                        <outlet property="unloaded" destination="bNG-dW-DLL" id="Jpb-MS-JTV"/>
+                        <outlet property="unloaded" destination="37b-Lx-Oye" id="eL4-26-WeH"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

@@ -8,8 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		891D3A87296C1F7700AE3793 /* ExtensionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D3A86296C1F7700AE3793 /* ExtensionStore.swift */; };
-		891D3A8A296C1F9B00AE3793 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D3A89296C1F9B00AE3793 /* Models.swift */; };
 		891D3A8D296C387900AE3793 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D3A8C296C387900AE3793 /* Extensions.swift */; };
+		891F262C2A0CF8380061AAFE /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891F262B2A0CF8380061AAFE /* RequestModel.swift */; };
+		891F262E2A0CF90F0061AAFE /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891F262D2A0CF90F0061AAFE /* Sort.swift */; };
+		892715D82A1225B400E37F37 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892715D72A1225B400E37F37 /* Filter.swift */; };
+		892715DA2A12260800E37F37 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892715D92A12260800E37F37 /* Extension.swift */; };
+		892715DC2A12263200E37F37 /* Parseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892715DB2A12263200E37F37 /* Parseable.swift */; };
+		892715DE2A12264700E37F37 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892715DD2A12264700E37F37 /* Plugin.swift */; };
+		892715E02A12269C00E37F37 /* SystemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892715DF2A12269C00E37F37 /* SystemExtension.swift */; };
+		892715E32A1226E700E37F37 /* BrowserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892715E12A1226E700E37F37 /* BrowserExtension.swift */; };
+		892715E42A1226E700E37F37 /* Firefox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892715E22A1226E700E37F37 /* Firefox.swift */; };
 		89C0C73C296BF75F00C829FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C0C73B296BF75F00C829FD /* AppDelegate.swift */; };
 		89C0C73E296BF75F00C829FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C0C73D296BF75F00C829FD /* ViewController.swift */; };
 		89C0C740296BF76100C829FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C0C73F296BF76100C829FD /* Assets.xcassets */; };
@@ -18,8 +26,16 @@
 
 /* Begin PBXFileReference section */
 		891D3A86296C1F7700AE3793 /* ExtensionStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionStore.swift; sourceTree = "<group>"; };
-		891D3A89296C1F9B00AE3793 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		891D3A8C296C387900AE3793 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		891F262B2A0CF8380061AAFE /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
+		891F262D2A0CF90F0061AAFE /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
+		892715D72A1225B400E37F37 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		892715D92A12260800E37F37 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		892715DB2A12263200E37F37 /* Parseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parseable.swift; sourceTree = "<group>"; };
+		892715DD2A12264700E37F37 /* Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
+		892715DF2A12269C00E37F37 /* SystemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemExtension.swift; sourceTree = "<group>"; };
+		892715E12A1226E700E37F37 /* BrowserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserExtension.swift; sourceTree = "<group>"; };
+		892715E22A1226E700E37F37 /* Firefox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firefox.swift; sourceTree = "<group>"; };
 		89C0C738296BF75F00C829FD /* Extension Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Extension Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C0C73B296BF75F00C829FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89C0C73D296BF75F00C829FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,8 +84,8 @@
 		891D3A85296C1F6200AE3793 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				891D3A89296C1F9B00AE3793 /* Models.swift */,
 				891D3A86296C1F7700AE3793 /* ExtensionStore.swift */,
+				891F262B2A0CF8380061AAFE /* RequestModel.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -80,6 +96,21 @@
 				891D3A8C296C387900AE3793 /* Extensions.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		891F262F2A0CF9180061AAFE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				891F262D2A0CF90F0061AAFE /* Sort.swift */,
+				892715D72A1225B400E37F37 /* Filter.swift */,
+				892715D92A12260800E37F37 /* Extension.swift */,
+				892715DB2A12263200E37F37 /* Parseable.swift */,
+				892715DD2A12264700E37F37 /* Plugin.swift */,
+				892715DF2A12269C00E37F37 /* SystemExtension.swift */,
+				892715E12A1226E700E37F37 /* BrowserExtension.swift */,
+				892715E22A1226E700E37F37 /* Firefox.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		89C0C72F296BF75F00C829FD = {
@@ -101,10 +132,11 @@
 		89C0C73A296BF75F00C829FD /* Extension Manager */ = {
 			isa = PBXGroup;
 			children = (
-				891D3A8B296C386B00AE3793 /* Utilities */,
 				891D3A82296C1EDE00AE3793 /* App */,
 				891D3A83296C1EED00AE3793 /* Resources */,
+				891D3A8B296C386B00AE3793 /* Utilities */,
 				891D3A85296C1F6200AE3793 /* Store */,
+				891F262F2A0CF9180061AAFE /* Models */,
 				891D3A84296C1EFC00AE3793 /* Features */,
 			);
 			path = "Extension Manager";
@@ -180,11 +212,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				892715E42A1226E700E37F37 /* Firefox.swift in Sources */,
 				891D3A8D296C387900AE3793 /* Extensions.swift in Sources */,
+				892715DA2A12260800E37F37 /* Extension.swift in Sources */,
+				892715DE2A12264700E37F37 /* Plugin.swift in Sources */,
+				892715D82A1225B400E37F37 /* Filter.swift in Sources */,
 				89C0C73E296BF75F00C829FD /* ViewController.swift in Sources */,
 				89C0C73C296BF75F00C829FD /* AppDelegate.swift in Sources */,
+				892715E02A12269C00E37F37 /* SystemExtension.swift in Sources */,
 				891D3A87296C1F7700AE3793 /* ExtensionStore.swift in Sources */,
-				891D3A8A296C1F9B00AE3793 /* Models.swift in Sources */,
+				891F262E2A0CF90F0061AAFE /* Sort.swift in Sources */,
+				891F262C2A0CF8380061AAFE /* RequestModel.swift in Sources */,
+				892715E32A1226E700E37F37 /* BrowserExtension.swift in Sources */,
+				892715DC2A12263200E37F37 /* Parseable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +376,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 0.2;
+				MARKETING_VERSION = 0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.krypted.extensionmanager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -354,7 +394,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 96238728QM;
+				DEVELOPMENT_TEAM = Z9HV438N39;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -365,7 +405,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 0.2;
+				MARKETING_VERSION = 0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.creativeconcept.extensionmanager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

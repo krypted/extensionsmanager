@@ -2,6 +2,7 @@
 //  AppDelegate.swift
 //  extensionsman
 //
+//  Created by Charles Edge on 05/15/2023.
 //
 
 import Cocoa

@@ -1,13 +1,19 @@
 //
 //  ExtensionStore.swift
+//  Panagram
 //
+//  Created by Charles Edge on 05/15/2023.
 //
 
 import Foundation
 
-//kextstat  kernal extensions
-
 class ExtensionStore {
+    
+    private let requestModel: RequestModel
+    
+    init(requestModel: RequestModel) {
+        self.requestModel = requestModel
+    }
     
     // MARK: - Type
     enum ExtensionType: String {
@@ -17,28 +23,17 @@ class ExtensionStore {
         case apple
     }
     
-    enum Query: String {
+    enum Query: String, CaseIterable {
         case plugin = "pluginkit -mvv"
         case systemExtension = "systemextensionsctl list"
+        case chrome = "find ~/Library/Application\\ Support/Google/Chrome/Default/Extensions -type f -name \"manifest.json\" -print0 | xargs -I {} -0 grep \'\"name\\|version\\|author\"\' \"{}\" | uniq"
+        case microsoftEdge = "find ~/Library/Application\\ Support/Microsoft\\ Edge/Default/Extensions -type f -name \"manifest.json\" -print0 | xargs -I {} -0 grep \'\"name\\|version\\|autor\":\' \"{}\" | uniq"
+        case firefox = "find ~/Library/Application\\ Support/Firefox/Profiles/ -type f -name \"extensions.json\" -print0 | xargs -I {} -0 grep \'\' \"{}\" | uniq"
     }
     
     struct Response {
         let query: String
         let data: String
-    }
-    
-    // MARK: - Data
-    private func getData(query: String) -> Result<String,Error> {
-        do {
-            let data = try safeShell(query)
-            return .success(data)
-        }catch {
-            return .failure(error)
-        }
-    }
-    
-    private func runQuery<T>(_ query: String) -> Result<T,Error> where T: Parseable {
-        getData(query: query).map{ T(string: $0) }
     }
     
     // MARK: - Plugins
@@ -47,17 +42,21 @@ class ExtensionStore {
     }
     
     private func getAllPlugins() -> Result<[Extension],Error> {
-        let pluginResult: Result<Plugins,Error> = runQuery(Query.plugin.rawValue)
+        let pluginResult: Result<Plugins,Error> = requestModel.runQuery(Query.plugin.rawValue)
         return pluginResult.map{$0.list}
     }
     
     // MARK: - System Extensions
     private func getAllSystemExtensions() -> Result<SystemExtensions,Error>{
-        runQuery(Query.systemExtension.rawValue)
+        requestModel.runQuery(Query.systemExtension.rawValue)
     }
     
     private func getNetworkExtensions() -> Result<[Extension],Error> {
         getAllSystemExtensions().map{$0.network}
+    }
+    
+    private func getOtherExtensions() -> Result<[Extension],Error> {
+        getAllSystemExtensions().map{$0.others}
     }
     
     private func getSystemExtensionsUnloaded() -> Result<[Extension],Error> {
@@ -67,29 +66,67 @@ class ExtensionStore {
         }
     }
     
-    private func getOtherExtensions() -> Result<[Extension],Error> {
-        getAllSystemExtensions().map{$0.others}
+    // MARK: Browser Extensions
+    func getChromeExtensions() -> Result<[Extension],Error> {
+        let result: Result<BrowserExtension,Error> = requestModel.runQuery(Query.chrome.rawValue)
+        return result.map{ $0.list.map { item in
+            item.type = "Google Chrome"
+            return item
+            
+        }}
+    }
+    
+    func getMicrosoftEdgeExtensions() -> Result<[Extension],Error> {
+        let result: Result<BrowserExtension,Error> = requestModel.runQuery(Query.microsoftEdge.rawValue)
+        return result.map{ $0.list.map { item in
+            item.type = "MicrosoftEdge Extension"
+            return item
+        }}
+    }
+    
+    func getFirefoxExtensions() -> Result<[Extension],Error> {
+        let result: Result<String,Error> = requestModel.getData(query: Query.firefox.rawValue)
+        switch result {
+        case .success(let rawData):
+            do {
+                let data = rawData.trimmingCharacters(in: .whitespacesAndNewlines).data(using: .utf8) ?? Data()
+                let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
+                let jsonData = try JSONSerialization.data(withJSONObject: json ?? [:], options: .prettyPrinted)
+                let firefoxExtensions = try JSONDecoder().decode(Firefox.self, from: jsonData)
+                let extensions = (firefoxExtensions.addons ?? []).map {
+                    let item = Extension()
+                    item.name = $0.name
+                    item.parentName = $0.vendor
+                    item.type = "Firefox Extension"
+                    item.status = $0.active
+                    item.path = $0.path
+                    item.version = $0.version
+                    return item
+                }
+                return .success(extensions)
+            } catch {
+                return .failure(error)
+            }
+        case .failure(let error):
+            return .failure(error)
+        }
     }
     
     // MARK: - All
     private func getAllExtensions() -> Result<[Extension],Error> {
+        
         var result = [Extension]()
     
-        switch getAllPlugins() {
-        case .success(let response):
-            result.append(contentsOf: response)
-        case .failure(let error):
-            return .failure(error)
+        let systemExtensions = getAllSystemExtensions().map{ $0.network + $0.others }
+        for extensionsResponse in [getAllPlugins(), systemExtensions, getChromeExtensions(), getMicrosoftEdgeExtensions(), getFirefoxExtensions()] {
+            switch extensionsResponse {
+            case.success(let response):
+                result.append(contentsOf: response)
+            case .failure(let error):
+                return .failure(error)
+            }
         }
-        
-        switch getAllSystemExtensions() {
-        case .success(let response):
-            result.append(contentsOf: response.network)
-            result.append(contentsOf: response.others)
-        case .failure(let error):
-            return .failure(error)
-        }
-        
+    
         return .success(result)
     }
     
@@ -173,39 +210,19 @@ class ExtensionStore {
         }
         
         var extensionList = [Extension]()
+        let empty = Result<[Extension], Error>.success([])
+        let result = [filter.thirdparty ? getThirdpartyExtensions() : empty,
+                      filter.network ? getNetworkExtensions() : empty,
+                      filter.system ? getOtherExtensions() : empty,
+                      filter.unloaded ? getSystemExtensionsUnloaded() : empty,
+                      filter.googleChrome ? getChromeExtensions() : empty,
+                      filter.microsoftEdge ? getMicrosoftEdgeExtensions() : empty,
+                      filter.fireFox ? getFirefoxExtensions() : empty]
         
-        if filter.thirdparty {
-            switch getThirdpartyExtensions() {
-            case .success(let items):
-                extensionList.append(contentsOf: items)
-            case .failure(let error):
-                return .failure(error)
-            }
-        }
-        
-        if filter.network {
-            switch getNetworkExtensions() {
-            case .success(let items):
-                extensionList.append(contentsOf: items)
-            case .failure(let error):
-                return .failure(error)
-            }
-        }
-        
-        if filter.system {
-            switch getOtherExtensions() {
-            case .success(let items):
-                extensionList.append(contentsOf: items)
-            case .failure(let error):
-                return .failure(error)
-            }
-        }
-        
-        
-        if filter.unloaded {
-            switch getSystemExtensionsUnloaded() {
-            case .success(let items):
-                extensionList.append(contentsOf: items)
+        for extensionsResponse in result {
+            switch extensionsResponse {
+            case.success(let response):
+                extensionList.append(contentsOf: response)
             case .failure(let error):
                 return .failure(error)
             }
@@ -218,45 +235,20 @@ class ExtensionStore {
     }
     
     // MARK: - Raw
-    private func getRawData() -> Result<String,Error> {
-        var result = ""
-        switch getData(query: Query.plugin.rawValue) {
-        case .success(let response):
-            result = response
-        case .failure(let error):
-            return .failure(error)
-        }
+    func getRawData() -> Result<String,Error> {
         
-        switch getData(query: Query.systemExtension.rawValue) {
-        case .success(let response):
-            result.append("\n"+response)
-        case .failure(let error):
-            return .failure(error)
+        var result = ""
+        
+        for dataResponse in Query.allCases.map({ requestModel.getData(query: $0.rawValue)}) {
+            switch dataResponse {
+            case .success(let response):
+                let prefix = result.isEmpty ? "" : "\n"
+                result.append("\(prefix)"+response)
+            case .failure(let error):
+                return .failure(error)
+            }
         }
         
         return .success(result)
-    }
-    
-    @discardableResult func safeShell(_ command: String) throws -> String {
-        let task = Process()
-        let pipe = Pipe()
-        
-        task.standardOutput = pipe
-        task.standardError = pipe
-//        task.arguments = ["-c", command]
-        task.arguments = ["-c", command]
-        task.executableURL = URL(fileURLWithPath: "/bin/zsh") //<--updated
-//        task.executableURL = URL(fileURLWithPath: "/bin/bash") //<--updated
-//        task.executableURL = URL(fileURLWithPath: "/usr/bin/env") //<--updated
-        task.standardInput = nil
-
-        try task.run() //<--updated
-//        task.launch()
-        
-        
-        let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        let output = String(data: data, encoding: .utf8)!
-    
-        return output
     }
 }

@@ -2,6 +2,7 @@
 //  ViewController.swift
 //  extensionsman
 //
+//  Created by Charles Edge on 05/15/2023.
 //
 
 import Cocoa
@@ -24,7 +25,7 @@ struct R {
                 return  CGSize(width: 970, height: 700)
             }
         }
-        static var minimunSize: CGSize { CGSize(width: 800, height: 550)}
+        static var minimunSize: CGSize { CGSize(width: 1000, height: 550)}
     }
     
     struct Color {
@@ -40,11 +41,14 @@ class ViewController: NSViewController {
     @IBOutlet weak var network: NSSwitch!
     @IBOutlet weak var system: NSSwitch!
     @IBOutlet weak var unloaded: NSSwitch!
+    @IBOutlet weak var googleChrome: NSSwitch!
+    @IBOutlet weak var microsoftEdge: NSSwitch!
+    @IBOutlet weak var fireFox: NSSwitch!
     @IBOutlet weak var message: NSTextField!
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var searchField: NSSearchField!
     
-    private let store = ExtensionStore()
+    private let store = ExtensionStore(requestModel: RequestModel())
     
     private var extensionList = [Extension]() {
         didSet {
@@ -107,7 +111,7 @@ class ViewController: NSViewController {
     }
     
     private func getFilter() -> Filter {
-        return Filter(all: all.state == .on, thirdparty: thirdparty.state == .on, network: network.state == .on, system: system.state == .on, unloaded: unloaded.state == .on)
+        return Filter(all: all.state == .on, thirdparty: thirdparty.state == .on, network: network.state == .on, system: system.state == .on, unloaded: unloaded.state == .on, googleChrome: googleChrome.state == .on, microsoftEdge: microsoftEdge.state == .on, fireFox: fireFox.state == .on)
     }
 }
 
