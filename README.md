@@ -1,6 +1,7 @@
 # Extensions Manager and extensionsman
 
 To just download the graphical interface, click here https://github.com/krypted/extensionsmanager/raw/main/Extension%20Manager%20Executable.zip. 
+To just download the signed CLI version, click here https://github.com/krypted/extensionsmanager/blob/main/extensionsmanCLI_Signed.zip
 
 ## Purpose
 
