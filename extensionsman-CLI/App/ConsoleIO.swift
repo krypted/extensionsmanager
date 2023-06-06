@@ -1,8 +1,7 @@
 //
 //  ConsoleIO.swift
-//  Panagram
 //
-//  Created by Charles Edge on 05/15/2023.
+//  Created by Charles Edge on 19/12/2022.
 //
 
 import Foundation

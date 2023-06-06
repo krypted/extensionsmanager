@@ -1,8 +1,7 @@
 //
 //  ExtensionStore.swift
-//  Panagram
 //
-//  Created by Charles Edge on 05/15/2023.
+//  Created by Charles Edge on 20/12/2022.
 //
 
 import Foundation
@@ -101,7 +100,8 @@ class ExtensionStore {
                 }
                 return .success(extensions)
             } catch {
-                return .failure(error)
+                print(error)
+                return .success([])
             }
         case .failure(let error):
             return .failure(error)
